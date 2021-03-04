@@ -1,4 +1,11 @@
-output "public_dns_name" {
-  description = "Public DNS names of the load balancer for this project"
-  value       = module.elb_http.this_elb_dns_name
+# Output declarations
+
+output "bucket_name" {
+  description = "Randomly generated bucket name."
+  value       = random_pet.bucket_name.id
+}
+
+output "bucket_arn" {
+  description = "ARN of bucket"
+  value       = module.s3_bucket.this_s3_bucket_arn
 }
