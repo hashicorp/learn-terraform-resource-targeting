@@ -33,7 +33,7 @@ module "sns_topic" {
   depends_on = [module.s3_bucket]
   source     = "terraform-aws-modules/sns/aws"
 
-  name  = "my-topic"
+  name = "my-topic"
 }
 
 resource "aws_sns_topic_policy" "default" {
