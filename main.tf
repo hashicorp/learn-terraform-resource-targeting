@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.28.0"
+      version = "~> 3.39.0"
     }
 
     random = {
@@ -17,7 +17,7 @@ provider "aws" {
 }
 
 resource "random_pet" "bucket_name" {
-  length    = 5
+  length    = 3
   separator = "-"
   prefix    = "learning"
 }
@@ -34,6 +34,7 @@ resource "random_pet" "object_names" {
 
   length    = 5
   separator = "_"
+  prefix    = "learning"
 }
 
 resource "aws_s3_bucket_object" "objects" {
@@ -42,6 +43,6 @@ resource "aws_s3_bucket_object" "objects" {
   acl          = "public-read"
   key          = "${random_pet.object_names[count.index].id}.txt"
   bucket       = module.s3_bucket.this_s3_bucket_id
-  content      = "Bucket object #${count.index}"
+  content      = "Example object #${count.index}"
   content_type = "text/plain"
 }
