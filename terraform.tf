@@ -1,12 +1,12 @@
 terraform {
   /* Uncomment this block to use Terraform Cloud for this tutorial
-	cloud {
-			organization = "organization-name"
-			workspaces {
-				name = "learn-terraform-resource-targeting"
-			}
-	}
-	*/
+  cloud {
+      organization = "organization-name"
+      workspaces {
+        name = "learn-terraform-resource-targeting"
+      }
+  }
+  */
 
   required_providers {
     aws = {
