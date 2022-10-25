@@ -1,19 +1,11 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.1.0"
-    }
-  }
-}
-
 provider "aws" {
   region = var.aws_region
+
+  default_tags {
+    tags = {
+      hashicorp-learn = "resource-targeting"
+    }
+  }
 }
 
 resource "random_pet" "bucket_name" {
@@ -24,7 +16,7 @@ resource "random_pet" "bucket_name" {
 
 module "s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "2.14.1"
+  version = "3.3.0"
 
   bucket = random_pet.bucket_name.id
   acl    = "private"
@@ -38,7 +30,7 @@ resource "random_pet" "object_names" {
   prefix    = "learning"
 }
 
-resource "aws_s3_bucket_object" "objects" {
+resource "aws_s3_object" "objects" {
   count = 4
 
   acl          = "public-read"
