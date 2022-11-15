@@ -1,9 +1,5 @@
 # Learn Terraform Resource Targeting
 
-Learn what Terraform resource targeting is and how to use it.
+This repo is a companion repo to the [Terraform Resource Targeting tutorial](https://developer.hashicorp.com/terraform/tutorials/state/resource-targeting).
 
-Follow along with the [Learn
-tutorial](https://learn.hashicorp.com/tutorials/terraform/resource-targeting?in=terraform/state)
-at HashiCorp Learn.
-
-This repository implements an S3 bucket and bucket objects.
+It contains Terraform configuration you can use to learn how to implement an S3 bucket and bucket objects with Terraform resource targeting.
