@@ -1,9 +1,9 @@
 terraform {
   /* Uncomment this block to use Terraform Cloud for this tutorial
   cloud {
-      organization = "organization-name"
+      organization = "hashicorp-support-org"
       workspaces {
-        name = "learn-terraform-resource-targeting"
+        name = "zisom-learn-terraform-resource-targeting"
       }
   }
   */
