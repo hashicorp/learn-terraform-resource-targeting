@@ -9,7 +9,7 @@ provider "aws" {
 }
 
 resource "random_pet" "bucket_name" {
-  length    = 3
+  length    = 5
   separator = "-"
   prefix    = "learning"
 }
