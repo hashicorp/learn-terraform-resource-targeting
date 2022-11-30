@@ -5,3 +5,7 @@ variable "aws_region" {
   type        = string
   default     = "eu-west-1"
 }
+
+variable "TF_CLI_ARGS" {
+ type = string 
+}
