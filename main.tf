@@ -19,10 +19,18 @@ resource "random_pet" "bucket_name" {
 
 module "s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "3.3.0"
+  version = "4.1.1"
 
   bucket = random_pet.bucket_name.id
   acl    = "private"
+
+  control_object_ownership = true
+  object_ownership         = "BucketOwnerPreferred"
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 }
 
 resource "random_pet" "object_names" {
